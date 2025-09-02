@@ -1,10 +1,11 @@
 # Excel Conditional Logic Implementation Process
+
 ## Reference Guide for Future Projects
 
 **Process Name**: `Excel-Conditional-Logic-Implementation`  
 **Reference ID**: `ECLI-2024-001`  
 **Repository**: https://github.com/beaml1ve/cursor-excel-example  
-**Memory ID**: 7931747  
+**Memory ID**: 7931747
 
 ---
 
@@ -17,7 +18,9 @@ This reference guide captures the complete methodology for implementing sophisti
 ## 📋 Process Template
 
 ### Phase 1: Analysis & Discovery
+
 1. **File Structure Analysis**
+
    - Use `examine_excel.py` to understand sheet organization
    - Identify key data locations (input fields, calculation areas)
    - Map existing formulas and dependencies
@@ -28,7 +31,9 @@ This reference guide captures the complete methodology for implementing sophisti
    - Establish rate structures (base vs modified rates)
 
 ### Phase 2: Basic Modifications
+
 1. **Simple Value Updates**
+
    - Update percentage rates in configuration sheets
    - Modify fixed fee amounts
    - Test basic calculations
@@ -39,12 +44,15 @@ This reference guide captures the complete methodology for implementing sophisti
    - Create backup copies
 
 ### Phase 3: Conditional Logic Implementation
+
 1. **Category Duplication**
+
    - Duplicate base categories for different conditions
    - Create `*_cab` and base versions in ecosystem sheet
    - Maintain consistent naming conventions
 
 2. **Formula Construction**
+
    - Build conditional formulas: `IF(AND(condition1, condition2), calculation, 0)`
    - Reference appropriate rate tables
    - Ensure proper cell references
@@ -55,7 +63,9 @@ This reference guide captures the complete methodology for implementing sophisti
    - Validate calculation chains
 
 ### Phase 4: Optimization & Formatting
+
 1. **Table Compaction**
+
    - Remove unnecessary padding rows
    - Merge header cells for consistency
    - Apply uniform formatting
@@ -66,7 +76,9 @@ This reference guide captures the complete methodology for implementing sophisti
    - Check total calculations
 
 ### Phase 5: Security & Documentation
+
 1. **Protection Implementation**
+
    - Apply sheet protection with passwords
    - Maintain access for necessary modifications
    - Test protection levels
@@ -81,16 +93,19 @@ This reference guide captures the complete methodology for implementing sophisti
 ## 🛠️ Key Technical Patterns
 
 ### Conditional Formula Pattern
+
 ```excel
 =IF(AND(C[row]="[category]",rideData!B$51="[vehicle_type]"),B[fee_row]*C[fee_row]+D[fee_row],0)
 ```
 
 ### Rate Structure Pattern
+
 - **Base Categories**: Original percentages for standard vehicles
 - **Modified Categories**: Doubled/adjusted percentages for special vehicles
 - **Naming Convention**: `category` vs `category_special`
 
 ### Python Script Categories
+
 1. **Analysis Scripts**: `examine_*.py`
 2. **Modification Scripts**: `update_*.py`, `implement_*.py`
 3. **Structure Scripts**: `fix_*.py`, `restore_*.py`
@@ -102,6 +117,7 @@ This reference guide captures the complete methodology for implementing sophisti
 ## 📊 Reusable Components
 
 ### 1. Excel File Analysis Template
+
 ```python
 def analyze_excel_structure(filename):
     wb = load_workbook(filename)
@@ -110,6 +126,7 @@ def analyze_excel_structure(filename):
 ```
 
 ### 2. Conditional Logic Implementation Template
+
 ```python
 def implement_conditional_logic(filename, conditions):
     # Duplicate categories
@@ -119,6 +136,7 @@ def implement_conditional_logic(filename, conditions):
 ```
 
 ### 3. Table Optimization Template
+
 ```python
 def optimize_table_structure(filename, sheet_name):
     # Remove padding rows
@@ -132,16 +150,19 @@ def optimize_table_structure(filename, sheet_name):
 ## 🎯 Application Scenarios
 
 ### Scenario A: Vehicle Type Differentiation
+
 - **Use Case**: Different rates for cab vs non-cab vehicles
 - **Implementation**: Duplicate categories with conditional logic
 - **Rate Strategy**: Doubled percentages for special category
 
 ### Scenario B: Date-Based Conditions
+
 - **Use Case**: Different rates before/after specific dates
 - **Implementation**: Date comparison in conditional formulas
 - **Rate Strategy**: Time-based percentage changes
 
 ### Scenario C: Multi-Factor Conditions
+
 - **Use Case**: Rates based on vehicle type + ride type + date
 - **Implementation**: Complex AND/OR conditions
 - **Rate Strategy**: Matrix-based rate determination
@@ -151,16 +172,19 @@ def optimize_table_structure(filename, sheet_name):
 ## 🔧 Troubleshooting Patterns
 
 ### Issue 1: Merged Cell Conflicts
+
 **Problem**: `'MergedCell' object attribute 'value' is read-only`
 **Solution**: Unmerge cells before modification, rebuild structure
 **Prevention**: Check for merged cells before editing
 
 ### Issue 2: Formula Reference Shifts
+
 **Problem**: Row insertions break formula references
 **Solution**: Systematic reference updates after structural changes
 **Prevention**: Plan structure changes before implementation
 
 ### Issue 3: Conditional Logic Errors
+
 **Problem**: Formulas not evaluating correctly
 **Solution**: Check exact string matches and data types
 **Prevention**: Use explicit conditions and test thoroughly
@@ -170,12 +194,14 @@ def optimize_table_structure(filename, sheet_name):
 ## 📚 Reference Materials
 
 ### Documentation Templates
+
 1. **Technical Documentation**: Formula explanations, structure diagrams
 2. **Conversation Log**: Complete development history
 3. **Setup Guide**: Installation and configuration instructions
 4. **Testing Guide**: Validation scenarios and expected results
 
 ### Code Templates
+
 1. **Analysis Scripts**: File examination and discovery
 2. **Implementation Scripts**: Logic implementation and modification
 3. **Validation Scripts**: Testing and verification
@@ -186,6 +212,7 @@ def optimize_table_structure(filename, sheet_name):
 ## 🚀 Quick Start Checklist
 
 ### For New Similar Projects:
+
 - [ ] Clone reference repository: `git clone https://github.com/beaml1ve/cursor-excel-example.git`
 - [ ] Analyze target Excel file structure
 - [ ] Identify conditional logic requirements
@@ -197,6 +224,7 @@ def optimize_table_structure(filename, sheet_name):
 - [ ] Create repository with documentation
 
 ### Key Success Factors:
+
 - [ ] Systematic approach following defined phases
 - [ ] Proper backup and version control
 - [ ] Comprehensive testing of all conditions
@@ -217,6 +245,7 @@ def optimize_table_structure(filename, sheet_name):
 ## 📞 Future Usage
 
 To reference this process in future conversations:
+
 1. **By Name**: "Use the Excel-Conditional-Logic-Implementation process"
 2. **By ID**: "Reference process ECLI-2024-001"
 3. **By Memory**: "Recall memory ID 7931747"
@@ -224,4 +253,4 @@ To reference this process in future conversations:
 
 ---
 
-*This process reference guide provides a reusable methodology for implementing complex conditional logic in Excel files using Python automation, based on the successful nola-ride-income.xlsx project.*
+_This process reference guide provides a reusable methodology for implementing complex conditional logic in Excel files using Python automation, based on the successful nola-ride-income.xlsx project._
