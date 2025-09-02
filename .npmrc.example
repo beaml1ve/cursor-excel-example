@@ -1,0 +1,5 @@
+@beaml1ve:registry=https://npm.pkg.github.com/beaml1ve
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN_HERE
+
+@beam-bence:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN_HERE
